@@ -23,10 +23,12 @@ public abstract class MenuService {
 
     public  void getSelectionMenu(){
 
+
+
         int select = -1;
 
         do {
-            String message = "=======Okul Yönetim Uygulamıza Hos Geldiniz========";
+
 
             System.out.println("===========İŞLEMLER==============");
             System.out.println("1-EKLEME");

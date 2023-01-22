@@ -12,7 +12,7 @@ public class StudentMenuService extends MenuService {
     Students std = new Students();
     Scanner scan = new Scanner(System.in);
 
-
+    int counter = 100;
 
     //Id = kimlik no
     //OgrenciNo = suffix + kimlikNo(son 3 hane ) + counter
@@ -34,22 +34,44 @@ public class StudentMenuService extends MenuService {
         System.out.print("Lutfen sınıfınızı giriniz: ");
         std.setGrade(scan.next());
 
-        System.out.print("Öğrenci Numaranız: ");
+        std.fillStudentList();
+        System.out.println("Öğrenci başarıyla eklenmiştir.");
+
+        counter++;
 
     }
 
     @Override
     public void search() {
+        System.out.print("Lutfen Aradığınız Öğrencinin Kimlik Numarasını giriniz: ");
+        int id = scan.nextInt();
+
+        for(Students w : std.studentList){
+
+            if(w.getId()==id){
+                System.out.println(w);
+            }
+
+
+        }
+
 
     }
 
     @Override
     public void list() {
+        System.out.println("Öğrenciler Listeleniyor...");
+        System.out.println(std.studentList);
 
     }
 
     @Override
     public void delete() {
+
+
+
+
+
 
     }
 
@@ -63,14 +85,13 @@ public class StudentMenuService extends MenuService {
     private String studentIdMaker(String suffix,int id){
 
         suffix = "Std-";
-        int counter = 100;
-
-       //String idx = std.getId()
 
 
+       String last3 = String.valueOf(std.getId());
+       last3.substring(last3.length()-3);
 
 
-        return "";
+        return suffix + last3  +  counter ;
 
 
     }

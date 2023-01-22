@@ -1,5 +1,7 @@
 package application.console;
 
+import application.console.student.StudentMenuService;
+
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -15,6 +17,7 @@ public class Runner {
     }
 
     public static void start(){
+        StudentMenuService studentMenuService = new StudentMenuService();
         Scanner scan = new Scanner(System.in);
         int select;
 
@@ -32,7 +35,7 @@ public class Runner {
              switch (select){
 
                  case 1:
-                     //Öğrenci işlemleri
+                     studentMenuService.getSelectionMenu();
                     break;
                  case 2:
                      //Öğretmen işlemleri

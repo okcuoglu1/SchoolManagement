@@ -21,7 +21,7 @@ public abstract class User {
      }
 
      public int getAge() {
-          return age;
+          return this.age;
      }
 
      public void setFirstName(String firstName) {
