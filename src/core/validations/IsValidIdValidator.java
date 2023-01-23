@@ -11,6 +11,8 @@ public class IsValidIdValidator {
             id = scan.next();
             String s = id.replaceAll("\\d", "");
 
+
+
             if (!s.isEmpty()){
                 System.out.println("Kimlik numarası sayı dışında karakter içeremez!");
                 System.out.println("Tekrar deneyiniz: ");

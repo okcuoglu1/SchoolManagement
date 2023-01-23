@@ -60,6 +60,8 @@ public abstract class MenuService {
                 case 0:
                     String message = "===== Okul Yönetim Uygulamamizdan Ayrılıyorsunuz =====";
                     SlowPrint.slowPrint(message,30);
+                    System.out.println();
+                    System.out.println("Iyi günler, tekrar bekleriz...");
                     System.exit(0);
                     break;
                 default:
@@ -69,7 +71,7 @@ public abstract class MenuService {
 
         } while (select != 0);
 
-        System.out.println("Iyi günler, tekrar bekleriz...");
+
     }
 
 
