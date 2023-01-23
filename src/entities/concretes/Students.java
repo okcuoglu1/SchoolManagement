@@ -7,12 +7,12 @@ import java.util.List;
 
 public class Students extends User {
 
-   public List<Students> studentList = new ArrayList<>();
-
-
+    public List<Students> studentsList = new ArrayList<>();
 
     private String number;
+
     private String grade;
+
 
     public String getNumber() {
         return number;
@@ -22,7 +22,6 @@ public class Students extends User {
         return grade;
     }
 
-
     public void setNumber(String number) {
         this.number = number;
     }
@@ -31,38 +30,35 @@ public class Students extends User {
         this.grade = grade;
     }
 
-
-    public Students(String firstname, String lastname, String number, String grade, int id, int age ) {
-        super.setFirstName(firstname);
-        super.setLastName(lastname);
-        this.number = number;
-        this.grade = grade;
-        super.setId(id);
-        super.setAge(age);
-
-
+    public Students() {
     }
 
-
-    public Students() {
+    public Students(String number, String grade, int age, String id, String firstName, String lastName) {
+        this.number = number;
+        this.grade = grade;
+        super.setAge(age);
+        super.setId(id);
+        super.setFirstName(firstName);
+        super.setLastName(lastName);
     }
 
     @Override
     public String toString() {
-        return
-                "number='" + number + '\'' +
-                        ", grade='" + grade + '\''
-                ;
+        return "Name: "+super.getFirstName()+
+                ", Surname: "+super.getLastName()+
+                ", Age: "+super.getAge()+
+                ", Grade: "+this.grade+
+                ", ID: "+super.getId()+
+                ", Student No: "+this.number;
     }
+
 
 
     public void fillStudentList(){
-
-        Students s = new Students(super.getFirstName(),super.getLastName(),this.number,this.grade,super.getId(),super.getAge());
-        studentList.add(s);
-
-
+        Students s = new Students(this.number,this.grade,super.getAge(),super.getId(),super.getFirstName(),super.getLastName());
+        studentsList.add(s);
     }
+
 
 
 

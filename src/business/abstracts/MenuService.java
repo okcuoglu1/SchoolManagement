@@ -1,5 +1,6 @@
 package business.abstracts;
 
+import core.helpers.SlowPrint;
 import entities.abstracts.User;
 
 import java.util.List;
@@ -9,37 +10,37 @@ public abstract class MenuService {
 
     protected String personType = "";
 
-    Scanner scan = new Scanner(System.in);
 
-    public abstract void add(); //Userdan parametre kullanıcak kişi ekliyicek
+
+    public abstract void add();
 
     public abstract void search();
 
     public abstract void list();
 
-    public abstract void delete();
+    public abstract void delete ();
 
+    public void getSelectionMenu(){
+        Scanner scan = new Scanner(System.in);
 
+        int select=-1;
 
-    public  void getSelectionMenu(){
-
-
-
-        int select = -1;
 
         do {
+            System.out.println("===== OKul Yönetim Uygulamamiza Hos Geldiniz =====");
 
-
-            System.out.println("===========İŞLEMLER==============");
+            System.out.println("=================  ISLEMLER  ==========================");
             System.out.println("1-EKLEME");
             System.out.println("2-ARAMA");
             System.out.println("3-LISTELEME");
-            System.out.println("4-SİLME");
+            System.out.println("4-SILME");
             System.out.println("5-ANA MENU");
-            System.out.println("0-ÇIKIŞ");
+            System.out.println("0-CIKIS");
+
+            System.out.println("\nSeçiminiz: ");
             select = scan.nextInt();
 
-            switch (select){
+            switch (select) {
 
                 case 1:
                     this.add();
@@ -54,42 +55,41 @@ public abstract class MenuService {
                     this.delete();
                     break;
                 case 5:
-                   select = 0;
+                    select=0;
                     break;
                 case 0:
+                    String message = "===== Okul Yönetim Uygulamamizdan Ayrılıyorsunuz =====";
+                    SlowPrint.slowPrint(message,30);
+                    System.exit(0);
                     break;
                 default:
-                    System.out.println("Hatalı Giriş Yaptiniz....!");
-
+                    System.out.println("Hatali Giris Yaptiniz...!");
             }
 
-        }while (select !=0);
 
-        System.out.println("İyi Günler Tekrar Bekleriz");
+        } while (select != 0);
 
-
-
-
-
-
+        System.out.println("Iyi günler, tekrar bekleriz...");
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
